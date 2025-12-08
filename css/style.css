@@ -1,0 +1,196 @@
+html body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* ======= COLORES ======= */
+:root{
+    --gold: #d4b106;
+    --gold-light: #e8d87a;
+    --text-dark: #222;
+}
+
+/* ====== ANIMACIONES ====== */
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* ===========================================
+   LOGO ESTILO PREMIUM SOBRE EL BANNER
+=========================================== */
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--gold);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    position: relative;
+    top: 40px; /* lo baja un poco y lo mete al banner */
+}
+
+/* RESPONSIVE del logo */
+@media (max-width: 768px) {
+    .logo img {
+        width: 150px;
+        height: 150px;
+        top: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+    .logo img {
+        width: 120px;
+        height: 120px;
+        top: 15px;
+    }
+}
+
+/* BANNER */
+.main-banner{
+    padding-top: 90px; /* deja espacio para el logo */
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-rows: auto auto;
+    animation: fadeInUp 1.5s ease forwards;
+    text-align: center;
+}
+
+.banner-texto{
+    font-size: 27px;
+    padding: 0 20%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ========== TITULOS ========== */
+
+.titulo-catalogo h1{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-dark);
+    margin-top: 40px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.titulo-catalogo h1::after{
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    display: block;
+    margin: 10px auto 0 auto;
+    border-radius: 10px;
+}
+
+.hombre h2, .mujer h2{
+    font-size: 32px;
+    color: var(--text-dark);
+    margin-top: 50px;
+    padding-left: 5px;
+}
+
+.hombre h2::after, .mujer h2::after {
+    content:"";
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    display: block;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+
+/* Contenedor catálogo */
+.catalogo{
+    margin: 20px;
+}
+
+/* Productos */
+.contenedor-productos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.producto{
+    background: #ffffff;
+    border: 2px solid var(--gold);
+    padding: 15px;
+    text-align: center;
+    border-radius: 15px;
+    transition: transform .3s ease, box-shadow .3s ease;
+    animation: fadeIn .8s ease forwards;
+    opacity: 0;
+}
+
+.producto:nth-child(1) { animation-delay: .1s; }
+.producto:nth-child(2) { animation-delay: .2s; }
+.producto:nth-child(3) { animation-delay: .3s; }
+.producto:nth-child(4) { animation-delay: .4s; }
+
+/* Imagenes fijadas sin recortes */
+.producto img{
+    width: 100%;
+    aspect-ratio: 1 / 1.25;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.producto:hover{
+    transform: translateY(-7px);
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Responsive productos */
+@media (max-width: 1024px){
+    .contenedor-productos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px){
+    .contenedor-productos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .banner-texto{
+        padding: 0 10%;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px){
+    .contenedor-productos{
+        grid-template-columns: 1fr;
+    }
+    .banner-texto{
+        padding: 0 5%;
+        font-size: 20px;
+    }
+}

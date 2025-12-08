@@ -81,8 +81,7 @@ html body{
 .banner-texto{
     font-size: 23px;
     padding: 0 5%;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 /* ========== TITULOS ========== */

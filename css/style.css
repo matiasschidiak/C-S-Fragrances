@@ -198,7 +198,7 @@ html body{
     width: fit-content;
     margin: 15px auto;
     padding: 15px 25px;
-    background: linear-gradient(135deg, #32cd32, #28a428);
+    background: linear-gradient(135deg, #d8cd31, #ac9827);
     border: 2px solid #000;        /* 💥 BORDE NEGRO */
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     border-radius: 30px;
